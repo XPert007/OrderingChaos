@@ -149,6 +149,8 @@ int main(int argc, char **argv) {
 
     for (long i = 0; i < n; i++) {
         char ch = charset[rand() % charset_len];
+       FILE *log = fopen("log.txt", "a");
+        fprintf(log, "%c", ch);
         if (buflen < maxlen) {
             buf[buflen++] = (char)tolower((char)ch);
             buf[buflen] = '\0';
